@@ -6,14 +6,20 @@ print("Wanna play TTT?")
 print('You are X and i am O')
 player_mark = 'x'
 pc_mark = 'o'
+# there is no choosing mark cause when i add such function it doesnt work and pc always play by 'o'
+#player_mark = input('What mark you wanna be? X or O?' )
+# if player_mark == 'X' or 'x':
+#    pc_mark = 'o'
+#elif player_mark == 'O' or 'o':
+#    pc_mark = 'x'
+#print(pc_mark, player_mark)
 
 def evaluate(board):
     a=board.find('xxx')
     b=board.find('ooo')
     if a>=0:
         print('You are winner!')
-          
-    if b>=0:
+    elif b>=0:
         print('Ha! You lose, i`m a winner!')        
     else:
         board_find=''
@@ -54,7 +60,7 @@ def pc_move(board):
                  break
     return  board_pc
 
-def tictactoe(board):
+def ttt(board):
     board_start=board
     while True:
         player_input=player_move(board_start)
@@ -71,7 +77,6 @@ def tictactoe(board):
             break  
         board_start=evaluate_input
         print(board_start)
-    
      
 board_input='--------------------'
-tictactoe(board_input)
+ttt(board_input)
